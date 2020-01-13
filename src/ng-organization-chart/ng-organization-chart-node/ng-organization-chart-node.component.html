@@ -1,0 +1,34 @@
+<!-- <a (click)="clickNode()" dnd-draggable [dragEnabled]="true" dnd-droppable (onDropSuccess)="dropNode($event)" [dragData]="node">{{ node.id}}</a> -->
+<div class="container" draggable droppable [dragData]="node" (onDrop)="dropNode($event)">
+    <!-- <p>{{node.id}}</p> -->
+  <div class="node-content">
+    <div class="node-content__img">
+      <img src="../../assets/Building.svg" alt="parent">
+    </div>
+    <p class="text-wrap" *ngIf="node.data.name">{{node.data.name}}</p>
+<!--    <p *ngIf="node.data.designation">{{node.data.designation}}</p>-->
+  </div>
+      <img class="imgAddClass" (click)="addNode()"
+           src="assets/plus.svg"
+          alt="add">
+    <img class="imgRemoveClass" *ngIf="node.data.remove" src="assets/Deleteicon.png"
+        alt="" (click)="clickNode()">
+    <!-- <p *ngIf="node.data.remove" (click)="clickNode()">{{node.data.remove}}</p> -->
+    <!-- <p (click)="addNode()">Add</p> -->
+  <div class="expand-button-container" *ngIf="node.children.length > 0">
+
+    <div class="expand-button" *ngIf="node.data.isChildrenVisible" (click)="testHide(node)">
+      <img class="arrowSize"
+          src="assets/minimize.svg"
+           alt="hide">
+    </div>
+    <div class="expand-button" *ngIf="!node.data.isChildrenVisible" (click)="testHide(node)">
+      <img class="arrowSize"
+           src="assets/Arrow.png"
+           alt="show">
+    </div>
+  </div>
+</div>
+<app-ng-organization-chart-list [ngClass]="'ng-organization-chart-list'" [nodeList]="node.children" (onClickNode)="onClickDeepNode($event)"
+    (onClickAddNode)="onAddDeepNode($event)" (onDragNode)="onDragDeepNode($event)" *ngIf="node.data.isChildrenVisible && node.children.length > 0"
+    [class]="childrenStyleClass"></app-ng-organization-chart-list>

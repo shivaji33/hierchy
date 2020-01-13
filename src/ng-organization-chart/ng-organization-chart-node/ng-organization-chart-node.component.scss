@@ -1,0 +1,134 @@
+app-ng-organization-chart-list {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  display: flex;
+  white-space: nowrap;
+}
+
+/*Time to add downward connectors from parents*/
+app-ng-organization-chart-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+.container {
+  position: relative;
+  padding: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 11px;
+  display: inline-block;
+  width: 240px;
+  height: 110px;
+  background: #ffffff;
+  box-shadow: 0 2px 2px rgba(#9a9494, 0.16);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+
+  .node-content {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    &__img {
+      width: 80px;
+      min-width: 80px;
+      height: 80px;
+      margin-right: 1rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .expand-button-container {
+    position: absolute;
+    left: 46.1%;
+    bottom: 0;
+    z-index: 1;
+
+    .expand-button {
+      .arrowSize {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+//.positionRelative {
+//	position: relative;
+//}
+.imgRemoveClass {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+.imgAddClass {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+.text-wrap{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//.marginTop {
+//  //margin-top: 47%;
+//}
+
+/* .square {
+	width: 100%;
+  }
+
+  .square:after {
+	content: "";
+	display: block;
+	padding-bottom: 40%;
+  }
+
+  .fontClass{
+	font-size: 15px;
+    font-weight: 900;
+  }
+
+  .headingClass{
+	position: absolute;
+    left: 32%;
+    top: 30%;
+  } */
+
+.nodeSize {
+  width: 100%;
+  height: 100%;
+}
+
+//.arrowDiv{
+//position: absolute;
+//  left: 47%;
+//  top: 32%;
+//  z-index: 9999;
+//}

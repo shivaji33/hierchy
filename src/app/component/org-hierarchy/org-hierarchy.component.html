@@ -1,0 +1,18 @@
+<!-- <ng2-org-chart [topEmployee]="topEmployee"></ng2-org-chart> -->
+<div style="margin-top: 100px">
+    <app-hierarchy [data]="data" (onClickNode)="clickNode($event)" (onDragNode)="dragNode($event)" (onClickAddNode)="addNode($event)"></app-hierarchy>
+</div>
+
+<div *ngIf="toAdd">
+    <div>
+        <input type="text" name="name" id="name" [(ngModel)]="user.name">
+    </div>
+
+    <div>
+        <input type="text" name="designation" id="designation" [(ngModel)]="user.designation">
+    </div>
+
+    <div>
+        <button (click)="add()">Add</button>
+    </div>
+</div>

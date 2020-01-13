@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background: #f3f4f7;
+}
+.oc-border {
+    border: 1px solid green;
+}
+
+.oc-background {
+    background-color: limegreen;
+}
+
+.oc-name {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    white-space: nowrap;
+}
+
+.oc-designation {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.oc-img {
+    margin-left: -10px;
+    width: 60px;
+    height: 60px;
+}
+
+.oc-img img {
+    height: 50px!important;
+}
+
+.test {
+    display: flex;
+    white-space: nowrap;
+}
